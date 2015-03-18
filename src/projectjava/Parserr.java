@@ -5,11 +5,6 @@
  */
 package projectjava;
 
-
-/**
- *
- * @author Αντώνης
- */
 public class Parserr {
         String checkText;
 
@@ -17,15 +12,12 @@ public class Parserr {
         return this.checkText;
     }
 
-    public void setCheckText(Actor text) {
-        this.checkText = text.getText();
-    }
 
-    public void ParserrCmdCheck (Command cmdCheck)
-    {
-        if( "false".equals(cmdCheck.isCmdCheck()))
-        {
-            System.out.println("I dont know this command!");
-        }
+    public void ParserrCmdCheck (Boolean text)
+    {   
+       if(text==false){
+           System.out.println("The command is not exist");
+       }
     }
+    
 }
