@@ -11,15 +11,16 @@ package projectjava;
  * @author Αέναος
  */
 public class Parser {
-          
-    public void checkCommand( String command, ZorkRoom currentRoom){
-         
-        if (currentRoom.getExits().containsKey(command)){
-            
-            currentRoom = (ZorkRoom) currentRoom.getExits().get(command);
-            System.out.println(currentRoom.getDescription());
-            
-        }else
-            System.out.println("I didn't recognise the command.");
-    }  
-}
+-
+-    public void checkCommand(String command, IZorkRoom currentRoom) {
+-
+-        if (currentRoom.getExits().containsKey(command)) {
+-
+-            RoomTraveler Travel = new RoomTraveler();
+-            Travel.switchRooms(command, currentRoom);
+-
+-        } else {
+-            System.out.println("I didn't recognise the command.");
+-        }
+-    }
+-}
