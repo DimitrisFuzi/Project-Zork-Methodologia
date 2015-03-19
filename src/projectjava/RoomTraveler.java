@@ -5,23 +5,15 @@
  */
 package textbasedadventure;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Αέναος
  */
-public class Actor {
+public class RoomTraveler {
 
-    String text;
-
-    public String getText() {
-        return this.text;
+    public void switchRooms(String command, ZorkRoom currentRoom) {
+        currentRoom = (ZorkRoom) currentRoom.getExits().get(command);
+        System.out.println(currentRoom.getDescription());
     }
 
-    public void setLine() {
-        Scanner scan = new Scanner(System.in);
-        this.text = scan.nextLine().toLowerCase();
-    }
 }
-
