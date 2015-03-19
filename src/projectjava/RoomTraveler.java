@@ -11,8 +11,8 @@ package textbasedadventure;
  */
 public class RoomTraveler {
 
-    public void switchRooms(String command, IZorkRoom currentRoom) {
-        currentRoom = (IZorkRoom) currentRoom.getExits().get(command);
+    public void switchRooms(String command, ZorkRoom currentRoom) {
+        currentRoom = (ZorkRoom) currentRoom.getExits().get(command);
         System.out.println(currentRoom.getDescription());
     }
 
