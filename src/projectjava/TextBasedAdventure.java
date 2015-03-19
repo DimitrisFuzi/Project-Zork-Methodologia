@@ -19,22 +19,22 @@ public class TextBasedAdventure {
         HashMap par = new HashMap();
         
         ZorkRoom CurrentRoom = new StartingRoom();
-        ZorkRoom Forest = new Forest();
-        ZorkRoom Castle = new Castle();   
-        ZorkRoom Keep = new Keep();
-        ZorkRoom DeadEnd = new DeadEnd();
+        Forest forest = new Forest();
+        Castle castle = new Castle();   
+        Keep keep = new Keep();
+        DeadEnd deadEnd = new DeadEnd();
                 
         
-        par.put("Forest", Forest);
-        par.put("Castle", Castle);
-        par.put("Keep", Keep);
-        par.put("DeadEnd", DeadEnd);
+        par.put("Forest", forest);
+        par.put("Castle", castle);
+        par.put("Keep", keep);
+        par.put("DeadEnd", deadEnd);
         
         CurrentRoom.setExits(par);
-        Forest.setExits(par);
-        Castle.setExits(par);
-        Keep.setExits(par);
-        DeadEnd.setExits(par);
+        forest.setExits(par);
+        castle.setExits(par);
+        keep.setExits(par);
+        deadEnd.setExits(par);
         
         Actor Player = new Actor();
         Player.setLine();
@@ -44,4 +44,3 @@ public class TextBasedAdventure {
     }
     
 }
-
