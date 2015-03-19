@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package textbasedadventure;
-
+import java.util.HashMap;
 /**
  *
  * @author Αέναος
@@ -15,21 +15,33 @@ public class TextBasedAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        IZorkRoom CurrentRoom = new ();
-        Forest Forest = new Forest();
-        Castle Castle = new Castle();
-        Keep Keep= new Keep();
-        DeadEnd DeadEnd = new DeadEnd();
         
-        Forest.setExits(DeadEnd,Castle,DeadEnd,Keep);
-        Castle.setExits(DeadEnd,DeadEnd,DeadEnd,Forest);
-        Castle.setExits(DeadEnd,Forest,DeadEnd,DeadEnd);
-        CurrentRoom.setDescription();
-        CurrentRoom.setExits(Forest,DeadEnd,DeadEnd,DeadEnd);
+        HashMap par = new HashMap();
         
+        ZorkRoom CurrentRoom = new StartingRoom();
+        ZorkRoom Forest = new Forest();
+        ZorkRoom Castle = new Castle();   
+        ZorkRoom Keep = new Keep();
+        ZorkRoom DeadEnd = new DeadEnd();
+                
+        
+        par.put("Forest", Forest);
+        par.put("Castle", Castle);
+        par.put("Keep", Keep);
+        par.put("DeadEnd", DeadEnd);
+        
+        CurrentRoom.setExits(par);
+        Forest.setExits(par);
+        Castle.setExits(par);
+        Keep.setExits(par);
+        DeadEnd.setExits(par);
         
         Actor Player = new Actor();
         Player.setLine();
+        Parser TextParser = new Parser();
+        TextParser.checkCommand(Player.getText(), CurrentRoom);
+        
     }
     
 }
+
