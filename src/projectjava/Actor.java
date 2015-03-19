@@ -24,3 +24,4 @@ public class Actor {
         this.text = scan.nextLine().toLowerCase();
     }
 }
+
